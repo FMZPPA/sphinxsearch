@@ -1,6 +1,6 @@
 <?php 
-namespace sngrl\SphinxSearch;
-use sngrl\SphinxSearch\SphinxClient;
+namespace iris\SphinxSearch;
+use iris\SphinxSearch\SphinxClient;
 
 class SphinxSearch
 {
