@@ -708,7 +708,7 @@ class SphinxClient
             $req .= pack("N", (int)$weight);
         $req .= pack("N", strlen($index)) . $index; // indexes
         $req .= pack("N", 1); // id64 range marker
-        $req .= $this->sphPackU64($this->_min_id) . sphPackU64($this->_max_id); // id64 range
+        $req .= $this->sphPackU64($this->_min_id) . self::sphPackU64($this->_max_id); // id64 range
 
         // filters
         $req .= pack("N", count($this->_filters));
@@ -723,7 +723,7 @@ class SphinxClient
                     break;
 
                 case self::SPH_FILTER_RANGE:
-                    $req .= $this->sphPackI64($filter["min"]) . sphPackI64($filter["max"]);
+                    $req .= $this->sphPackI64($filter["min"]) . self::sphPackI64($filter["max"]);
                     break;
 
                 case self::SPH_FILTER_FLOATRANGE:
